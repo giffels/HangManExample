@@ -1,4 +1,14 @@
 language: python
+
 python:
   - "3.4"
-script: ./run_unittest.sh
+
+install:
+  - pip install codecov
+
+script: 
+  - coverage run -m unittest discover
+
+after_success:
+  - codecov
+
